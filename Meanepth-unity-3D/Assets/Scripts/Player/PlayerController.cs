@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
+    public float runningSpeed = 7.5f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     public Camera playerCamera;
@@ -24,8 +24,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-
-        // Lock cursor
+        lookSpeed = SettingsManager.instance.Sensitivity;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
