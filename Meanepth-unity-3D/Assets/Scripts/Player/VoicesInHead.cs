@@ -36,8 +36,10 @@ public class VoicesInHead : MonoBehaviour
     }
     public void StopFade()
     {
+        if(FadeInCoroutine != null){
         StopCoroutine(FadeInCoroutine);
         FadeInCoroutine = null;
+        }
         audioSource.volume = 0f;
     }
 }

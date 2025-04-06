@@ -39,8 +39,10 @@ public class RedScreen : MonoBehaviour
     }
     public void StopRed()
     {
+        if(redCoroutine != null){
         StopCoroutine(redCoroutine);
         redCoroutine = null;
+        }
         Color color = redImage.color;
         color.a = 0f;
         redImage.color = color;

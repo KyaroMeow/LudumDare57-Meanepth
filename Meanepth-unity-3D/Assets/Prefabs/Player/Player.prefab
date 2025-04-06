@@ -304,8 +304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSpeed: 7.5
-  runningSpeed: 11.5
-  jumpSpeed: 8
   gravity: 20
   playerCamera: {fileID: 1496342655805153982}
   lookSpeed: 2
@@ -339,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 60
-  targetAlpha: 0.2
+  targetAlpha: 0.4
   redImage: {fileID: 7960368525983373746}
 --- !u!114 &4166562382920372154
 MonoBehaviour:
@@ -353,9 +351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b3618893ce7b342b2ee01ccd108cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitudeStart: 0.1
+  shakeMagnitudeStart: 0.01
   shakeMagnitudeEnd: 0.5
-  shakeIncreaseSpeed: 0.1
+  shakeIncreaseSpeed: 0.01
   PlayerCamera: {fileID: 6037402407406425981}
 --- !u!114 &2938145477263320353
 MonoBehaviour:
@@ -370,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1512208957564213313}
-  fadeDuration: 24.7
+  fadeDuration: 120
   targetVolume: 1
 --- !u!1 &3077262563626650172
 GameObject:
