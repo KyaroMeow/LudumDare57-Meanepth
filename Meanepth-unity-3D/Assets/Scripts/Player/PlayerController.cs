@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        if(SettingsManager.instance != null){
         lookSpeed = SettingsManager.instance.Sensitivity;
+        }
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

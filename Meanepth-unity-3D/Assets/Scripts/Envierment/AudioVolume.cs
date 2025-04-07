@@ -6,6 +6,8 @@ public class AudioVolume : MonoBehaviour
 {
     void Start()
     {
+        if(SettingsManager.instance != null){
         GetComponent<AudioSource>().volume = SettingsManager.instance.volume;
+        }
     }
 }
