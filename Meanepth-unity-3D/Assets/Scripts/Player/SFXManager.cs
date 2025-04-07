@@ -25,6 +25,7 @@ public class SFXManager : MonoBehaviour
         }
     }
     public void PlaySteps(){
+        first = ! first;
         if(first){
         SFXSource.PlayOneShot(Steps1);
         }
