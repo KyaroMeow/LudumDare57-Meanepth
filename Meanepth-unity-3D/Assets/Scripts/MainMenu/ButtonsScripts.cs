@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ButtonsScripts : MonoBehaviour
 {
+    public Animator CameraAnimator;
     public Slider VolumeValue;
     public Slider SensitivityValue;
     public void SetVolume()
@@ -18,7 +19,10 @@ public class ButtonsScripts : MonoBehaviour
         SettingsManager.instance.Sensitivity = SensitivityValue.value;
     }
     public void OpenSettings(){
-
+        CameraAnimator.SetTrigger("Rotate");
+    }
+    public void CloseSettings(){
+        CameraAnimator.SetTrigger("RotateBack");
     }
     public void Exit(){
         Application.Quit();

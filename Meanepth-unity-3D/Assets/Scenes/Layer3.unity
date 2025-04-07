@@ -10167,6 +10167,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1294357900360941678, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: runningSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294357900360941678, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: stepInterval
       value: 0.39
       objectReference: {fileID: 0}
@@ -10223,6 +10227,10 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4841177886100329363, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841177886100329363, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: c357b13a24e8c114cbc7e1564a7dadae, type: 3}
@@ -10230,6 +10238,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c357b13a24e8c114cbc7e1564a7dadae, type: 3}
+    - target: {fileID: 5788467775870501136, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: _PixelationFactor
+      value: 0.327
+      objectReference: {fileID: 0}
     - target: {fileID: 8279666646500433140, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: LeviScream
       value: 
