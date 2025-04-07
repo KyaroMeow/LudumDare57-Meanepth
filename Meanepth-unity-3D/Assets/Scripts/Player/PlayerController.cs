@@ -21,11 +21,16 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    // Переменные для управления звуком шагов
+    public float stepInterval = 0.5f; // Интервал между шагами в секундах
+    private float stepTimer = 0f;
+    private bool isMoving = false;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         if(SettingsManager.instance != null){
-        lookSpeed = SettingsManager.instance.Sensitivity;
+            lookSpeed = SettingsManager.instance.Sensitivity;
         }
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -33,13 +38,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // We are grounded, so recalculate move direction based on axes
+        // Определяем, движется ли игрок
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
+        isMoving = (inputX != 0 || inputY != 0);
+
+        // Мы на земле, поэтому пересчитываем направление движения на основе осей
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        // Press Left Shift to run
+        // Нажатие Left Shift для бега
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+        float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * inputY : 0;
+        float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * inputX : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
@@ -52,24 +62,37 @@ public class PlayerController : MonoBehaviour
             moveDirection.y = movementDirectionY;
         }
 
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // as an acceleration (ms^-2)
+        // Применяем гравитацию
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        // Move the controller
+        // Перемещаем контроллер
         characterController.Move(moveDirection * Time.deltaTime);
 
-        // Player and Camera rotation
+        // Вращение игрока и камеры
         if (canMove)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+
+        // Управление звуком шагов
+        if (isMoving && characterController.isGrounded)
+        {
+            stepTimer += Time.deltaTime;
+            if (stepTimer >= stepInterval)
+            {
+                SFXManager.instance.PlaySteps();
+                stepTimer = 0f;
+            }
+        }
+        else
+        {
+            stepTimer = 0f;
         }
     }
 }

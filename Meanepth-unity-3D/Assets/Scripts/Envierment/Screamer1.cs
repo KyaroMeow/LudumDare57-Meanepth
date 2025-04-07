@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Screamer1 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject Riba;
+    public bool isScream = false;
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.CompareTag("Player"))
+        {
+            if(!isScream)
+            {
+                Riba.SetActive(true);
+                SFXManager.instance.PlayScream();
+                isScream = true;
+            }
+        }
     }
 }
