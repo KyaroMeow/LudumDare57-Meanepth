@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioVolume : MonoBehaviour
 {
-    void Start()
+    void Update()
     {
         if(SettingsManager.instance != null){
         GetComponent<AudioSource>().volume = SettingsManager.instance.volume;

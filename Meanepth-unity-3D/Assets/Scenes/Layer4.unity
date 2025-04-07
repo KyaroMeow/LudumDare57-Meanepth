@@ -217,8 +217,16 @@ PrefabInstance:
       value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 1294357900360941678, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: runningSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294357900360941678, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: stepInterval
-      value: 0.39
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294357900360941678, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: walkingSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1420619248115119996, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: m_AnchorMax.x
@@ -251,6 +259,10 @@ PrefabInstance:
     - target: {fileID: 1420619248115119996, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 13.552368
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512208957564213313, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2061134842065733474, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: m_Name
@@ -304,8 +316,17 @@ PrefabInstance:
       propertyPath: _PixelationFactor
       value: 0.32
       objectReference: {fileID: 0}
+    - target: {fileID: 8279666646500433140, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: Steps1
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f8004246f07d8c48a94f68bcdecb47b, type: 3}
+    - target: {fileID: 8279666646500433140, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: Steps2
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f8004246f07d8c48a94f68bcdecb47b, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 262012782673033020, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3175014876622050037, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       insertIndex: 1
