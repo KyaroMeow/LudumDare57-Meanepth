@@ -25,7 +25,15 @@ public class PlayerInteraction : MonoBehaviour
             Interaction interactable = hit.collider.GetComponent<Interaction>();
             if (interactable != null)
             {
+                Debug.Log("interactable != null");
                 interactable.Interact();
+            }else{
+            Debug.Log("interactable = null");
+            }
+            Screamer3 cutScene3 = hit.collider.GetComponent<Screamer3>();
+            if (cutScene3 != null)
+            {
+                cutScene3.Interact();
             }
         }
     }

@@ -9,6 +9,7 @@ public class Interaction : MonoBehaviour
     public void Interact()
     {
         if(IsInteract){
+        SFXManager.instance.PlayTouch();
         GetComponent<ItemsShake>().IsShake = false;
         Debug.Log("Взаимодействие с объектом: " + gameObject.name);
         UIManager.instance.StartTypingText(interactionText);
