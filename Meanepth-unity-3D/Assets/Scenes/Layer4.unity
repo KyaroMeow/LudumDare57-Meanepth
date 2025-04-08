@@ -1752,7 +1752,7 @@ MonoBehaviour:
   mainCamera: {fileID: 780170638}
   moveSpeed: 15
   fadeDuration: 1
-  targetCameraRotation: {x: 0, y: 0, z: 0, w: 0}
+  targetCameraRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
 --- !u!65 &1928950151
 BoxCollider:
   m_ObjectHideFlags: 0

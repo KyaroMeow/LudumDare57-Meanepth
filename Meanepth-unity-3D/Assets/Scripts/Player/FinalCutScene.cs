@@ -15,7 +15,6 @@ public class FinalCutScene : MonoBehaviour
     public float fadeDuration = 1.0f; // Длительность затухания/нарастания
     public Quaternion targetCameraRotation; // Целевой поворот камеры
 
-    private bool hasFadedIn = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -44,42 +43,42 @@ public class FinalCutScene : MonoBehaviour
     }
 
     IEnumerator MoveAndRotateCamera()
+{
+    if (targetCameraPosition == null)
     {
-        if (targetCameraPosition == null)
-        {
-            Debug.LogError("Target Camera Position is not assigned.");
-            yield break;
-        }
-
-        // Получаем начальную позицию и поворот камеры
-        Vector3 startPosition = mainCamera.transform.position;
-        Quaternion startRotation = mainCamera.transform.rotation;
-        // Получаем целевую позицию и поворот
-        Vector3 endPosition = targetCameraPosition.position;
-        Quaternion endRotation = targetCameraRotation;
-
-        // Время начала движения
-        float startTime = Time.time;
-
-        while (Vector3.Distance(mainCamera.transform.position, endPosition) > 0.1f || Quaternion.Angle(mainCamera.transform.rotation, endRotation) > 0.1f)
-        {
-            // Перемещение
-            float journeyLength = Vector3.Distance(startPosition, endPosition);
-            float distCovered = (Time.time - startTime) * moveSpeed;
-            float fractionOfJourney = distCovered / journeyLength;
-            mainCamera.transform.position = Vector3.Lerp(startPosition, endPosition, fractionOfJourney);
-
-            // Поворот
-            mainCamera.transform.rotation = Quaternion.Slerp(startRotation, endRotation, fractionOfJourney);
-
-            yield return null;
-        }
-
-        // Устанавливаем точное положение и поворот камеры
-        mainCamera.transform.position = endPosition;
-        mainCamera.transform.rotation = endRotation;
-        Debug.Log("Camera movement and rotation completed.");
+        Debug.LogError("Target Camera Position is not assigned.");
+        yield break;
     }
+
+    // Получаем начальную позицию и поворот камеры
+    Vector3 startPosition = mainCamera.transform.position;
+    // Получаем целевую позицию и поворот
+    Vector3 endPosition = targetCameraPosition.position;
+    Quaternion endRotation = targetCameraRotation;
+
+    float startTime = Time.time;
+
+    while (Vector3.Distance(mainCamera.transform.position, endPosition) > 0.1f || Quaternion.Angle(mainCamera.transform.rotation, endRotation) > 0.1f)
+    {
+        // Перемещение
+        float journeyLength = Vector3.Distance(startPosition, endPosition);
+        float distCovered = (Time.time - startTime) * moveSpeed;
+        float fractionOfJourney = distCovered / journeyLength;
+        mainCamera.transform.position = Vector3.Lerp(startPosition, endPosition, fractionOfJourney);
+
+        // Поворот в мировых координатах
+        mainCamera.transform.rotation = Quaternion.RotateTowards(mainCamera.transform.rotation, endRotation, moveSpeed * 100f * Time.deltaTime);
+        Debug.Log("CameraRotation:" + mainCamera.transform.rotation.ToString());
+
+        yield return null;
+    }
+
+    // Устанавливаем точное положение и поворот камеры
+    mainCamera.transform.position = endPosition;
+    mainCamera.transform.rotation = endRotation;
+    Debug.Log("Camera movement and rotation completed.");
+}
+
 
     
     IEnumerator LightCourutine()
