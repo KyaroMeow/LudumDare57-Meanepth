@@ -8,14 +8,18 @@ public class Screamer3 : MonoBehaviour
     public GameObject Levi;
     public PlayercantMove playercantMove;
     public ScreenFade screenFade;
-     public bool IsInteract = true;
+    [HideInInspector]
+    public bool IsInteract = true;
     public void Interact()
     {
+        if(IsInteract){
         SFXManager.instance.PlayScream();
         Levi.SetActive(true);
         playercantMove.Rotate();
         screenFade.FadeToDark();
         StartCoroutine(ChangeSceneAfterDelay());
+        IsInteract = false;
+        }
 
     }
     IEnumerator ChangeSceneAfterDelay()

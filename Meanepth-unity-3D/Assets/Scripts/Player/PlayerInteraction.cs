@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
+
     public float interactRange = 3f; // Максимальная дистанция взаимодействия
     public Camera playerCamera; // Камера игрока
     public KeyCode interactKey = KeyCode.E; // Клавиша для взаимодействия
+    public GameObject cursorActive;
 
     void Update()
     {
+        CheckInteract();
         if (Input.GetKeyDown(interactKey))
         {
             AttemptInteract();
@@ -35,6 +39,28 @@ public class PlayerInteraction : MonoBehaviour
             {
                 cutScene3.Interact();
             }
+        }
+    }
+    void CheckInteract()
+    {
+        RaycastHit hit;
+        // Отправляем луч из камеры игрока
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, interactRange))
+        {
+            Interaction interactable = hit.collider.GetComponent<Interaction>();
+            Screamer3 cutScene3 = hit.collider.GetComponent<Screamer3>();
+            if (interactable != null && interactable.IsInteract == true)
+            {
+               cursorActive.SetActive(true);
+            }
+            if(cutScene3 != null && cutScene3.IsInteract == true)
+            {
+               cursorActive.SetActive(true);
+            }
+        }
+        else
+        {
+          cursorActive.SetActive(false);
         }
     }
 

@@ -13,7 +13,9 @@ public class Interaction : MonoBehaviour
         GetComponent<ItemsShake>().IsShake = false;
         Debug.Log("Взаимодействие с объектом: " + gameObject.name);
         UIManager.instance.StartTypingText(interactionText);
+        if(LevelManager.instance != null){
         LevelManager.instance.CurrentItemCount++;
+        }
         IsInteract = false;
         }
     }

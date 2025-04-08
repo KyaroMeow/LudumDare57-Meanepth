@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject PauseMenu;
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 7.5f;
     public float jumpSpeed = 8.0f;
@@ -38,6 +39,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            PauseMenu.SetActive(!PauseMenu.activeSelf);
+        }
         // Определяем, движется ли игрок
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
