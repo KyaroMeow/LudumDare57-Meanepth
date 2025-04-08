@@ -892,6 +892,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2011124684925521616, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
     - target: {fileID: 2061134842065733474, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: m_Name
       value: Player
