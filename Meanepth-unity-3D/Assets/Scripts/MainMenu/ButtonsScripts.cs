@@ -7,6 +7,13 @@ using UnityEngine.UI;
 
 public class ButtonsScripts : MonoBehaviour
 {
+    void Start()
+    {
+        if(Cursor.lockState == CursorLockMode.Locked){
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
     public Animator CameraAnimator;
     public Slider VolumeValue;
     public Slider SensitivityValue;
