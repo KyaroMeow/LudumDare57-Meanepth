@@ -96,7 +96,7 @@ public class FinalCutScene : MonoBehaviour
             yield return null;
         }
         UIManager.instance.StartTypingText(Text);
-        yield return new WaitForSeconds(16f);
+        yield return new WaitForSeconds(12f);
         StartCoroutine(FlashCourutine());
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Titrs");

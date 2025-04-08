@@ -10180,7 +10180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1512208957564213313, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2061134842065733474, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: m_Name
@@ -10258,7 +10258,8 @@ PrefabInstance:
       propertyPath: LeviScream
       value: 
       objectReference: {fileID: 8300000, guid: 663fdeca4536c0042bd3ba282ce74a42, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8682330533169418899, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
     m_RemovedGameObjects:
     - {fileID: 262012782673033020, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
     m_AddedGameObjects:
