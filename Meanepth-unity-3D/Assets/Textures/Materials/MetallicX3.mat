@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: MetallicX3
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: 095a6756b76b7de4095f0fdd5239e8eb, type: 2}
+  m_Parent: {fileID: 2100000, guid: 45ef0c431023b9444bfecafe6568a962, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _NORMALMAP
