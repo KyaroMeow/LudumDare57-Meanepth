@@ -11357,7 +11357,7 @@ PrefabInstance:
     - target: {fileID: 1294357900360941678, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: PauseMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 645747736}
     - target: {fileID: 1294357900360941678, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: jumpPower
       value: 0
@@ -11453,7 +11453,7 @@ PrefabInstance:
     - target: {fileID: 6729600416432004026, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: cursorActive
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 645747737}
     - target: {fileID: 8279666646500433140, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       propertyPath: Steps1
       value: 
@@ -11479,6 +11479,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1071283298}
   m_SourcePrefab: {fileID: 100100000, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+--- !u!1 &645747736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6768806867372920566, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+  m_PrefabInstance: {fileID: 645747735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &645747737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5143538900795921347, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+  m_PrefabInstance: {fileID: 645747735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &648797471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bfb6fa22df29f3f46891864cc970dcae, type: 3}
