@@ -12359,9 +12359,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2061134842065733474, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1071283289}
-    - targetCorrespondingSourceObject: {fileID: 2061134842065733474, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1071283298}
   m_SourcePrefab: {fileID: 100100000, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
 --- !u!1 &645747736 stripped
 GameObject:
@@ -19028,11 +19025,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3678130446500785610, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
   m_PrefabInstance: {fileID: 645747735}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1071283298
+--- !u!114 &1071283300 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7009895777890860614, guid: 3258068b71cf91a4290baeab0f0867d9, type: 3}
+  m_PrefabInstance: {fileID: 645747735}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071283288}
   m_Enabled: 1
@@ -19040,7 +19036,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c9638dee101ac40be8a3244cede832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlackImage: {fileID: 0}
 --- !u!1 &1074760977
 GameObject:
   m_ObjectHideFlags: 0
@@ -23625,7 +23620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levi: {fileID: 1333802175}
   playercantMove: {fileID: 1071283289}
-  screenFade: {fileID: 1071283298}
+  screenFade: {fileID: 1071283300}
   IsInteract: 1
 --- !u!65 &1360999145
 BoxCollider:

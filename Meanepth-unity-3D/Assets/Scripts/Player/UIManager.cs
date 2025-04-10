@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI ItemMessage; 
     private string currentText = "";
     private Coroutine TypingCourutine;
+    private Coroutine FadeCourutine;
     private void Awake()
     {
         if (instance == null)
@@ -24,14 +25,14 @@ public class UIManager : MonoBehaviour
     }
     public void StartTypingText(string fullText)
     {
-        if(TypingCourutine == null){
-        TypingCourutine = StartCoroutine(ShowText(fullText));
-        }
-        else{
-            StopCoroutine(TypingCourutine);
-            TypingCourutine = null;
-            TypingCourutine = StartCoroutine(ShowText(fullText));
-        }
+    if(TypingCourutine != null){
+        StopCoroutine(TypingCourutine);
+    }
+    if (FadeCourutine != null){
+        StopCoroutine(FadeCourutine);
+    }
+    ItemMessage.text = "";
+    TypingCourutine = StartCoroutine(ShowText(fullText));
     }
     IEnumerator ShowText(string text)
     {
@@ -43,7 +44,7 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
          yield return new WaitForSeconds(fadeDelay);
-         StartCoroutine(FadeText());
+        FadeCourutine = StartCoroutine(FadeText());
     }
 
     IEnumerator FadeText()
