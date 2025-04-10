@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour
         StopCoroutine(FadeCourutine);
     }
     ItemMessage.text = "";
+    currentText = "";
     TypingCourutine = StartCoroutine(ShowText(fullText));
     }
     IEnumerator ShowText(string text)

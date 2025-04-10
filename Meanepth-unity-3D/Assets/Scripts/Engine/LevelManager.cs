@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
     public int ItemCount;
     public int CurrentItemCount = 0;
     public GameObject wall;
+    public GameObject HintWall;
+    private int ItemCountHintWall = 1;
     private void Awake()
     {
         if (instance == null)
@@ -24,6 +26,11 @@ public class LevelManager : MonoBehaviour
         if(CurrentItemCount == ItemCount){
             wall.SetActive(false);
             CurrentItemCount++;
+        }
+        if(HintWall!=null){
+            if(CurrentItemCount == ItemCountHintWall){
+                HintWall.SetActive(false);
+            }
         }
     }
 }
