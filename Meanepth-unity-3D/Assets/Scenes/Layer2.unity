@@ -5339,7 +5339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e44fc0792572fc4dae52c43ea0ca65c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Riba: {fileID: 528212458}
+  RibaAnimator: {fileID: 0}
 --- !u!65 &333182375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7426,7 +7426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &528212459
 Animator:
   serializedVersion: 7

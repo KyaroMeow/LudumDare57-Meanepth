@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Screamer2 : MonoBehaviour
 {
-   public GameObject Riba;
+   public Animator RibaAnimator;
    private bool IsntPlayed = true;
    void OnTriggerEnter(Collider other)
    {
     if(other.CompareTag("Player")){
     if(IsntPlayed){
     SFXManager.instance.PlayScream();
-    Riba.SetActive(true);
+    RibaAnimator.SetTrigger("Screamer");
     IsntPlayed = false;
     }
     }
