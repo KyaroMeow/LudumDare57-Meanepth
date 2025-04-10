@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class FinalCutScene : MonoBehaviour
 {
+    public AudioSource audioSource;
     public string Text;
     public TextMeshProUGUI PlayerChat;
     public GameObject skipText;
@@ -50,6 +51,7 @@ void Update()
         {
             Debug.LogError("Main Camera is not assigned.");
         }
+        audioSource.Play();
         yield return StartCoroutine(ShowText(Text));
         canSkip = true;
         skipText.SetActive(true);
