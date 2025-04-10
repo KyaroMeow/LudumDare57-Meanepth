@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ using UnityEngine.UI;
 public class FinalCutScene : MonoBehaviour
 {
     public string Text;
+    public TextMeshProUGUI PlayerChat;
+    public GameObject skipText;
     public Image whiteImage; // Ссылка на белую картинку
     public PlayerController playerController; // Ссылка на контроллер игрока
     public Transform targetCameraPosition; // Заготовленная точка для камеры
@@ -14,8 +17,16 @@ public class FinalCutScene : MonoBehaviour
     public float moveSpeed = 2.0f; // Скорость перемещения камеры
     public float fadeDuration = 1.0f; // Длительность затухания/нарастания
     public Quaternion targetCameraRotation; // Целевой поворот камеры
+    private bool canSkip = false;
 
-
+void Update()
+{
+    if(canSkip){
+        if(Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.E)||Input.GetKeyDown(KeyCode.KeypadEnter)){
+            SceneManager.LoadScene("Titrs");
+        }
+    }
+}
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -39,7 +50,9 @@ public class FinalCutScene : MonoBehaviour
         {
             Debug.LogError("Main Camera is not assigned.");
         }
-
+        yield return StartCoroutine(ShowText(Text));
+        canSkip = true;
+        skipText.SetActive(true);
     }
 
     IEnumerator MoveAndRotateCamera()
@@ -94,11 +107,18 @@ public class FinalCutScene : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
-        UIManager.instance.StartTypingText(Text);
-        yield return new WaitForSeconds(12f);
-        StartCoroutine(FlashCourutine());
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Titrs");
+        //UIManager.instance.StartTypingText(Text);
+       
+    }
+    IEnumerator ShowText(string text)
+    {
+        string currentText = "";
+        foreach (char letter in text.ToCharArray())
+        {
+            currentText += letter;
+            PlayerChat.text = currentText;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     

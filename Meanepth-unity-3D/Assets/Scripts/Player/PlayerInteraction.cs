@@ -26,6 +26,7 @@ public class PlayerInteraction : MonoBehaviour
         // Отправляем луч из камеры игрока
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, interactRange))
         {
+            if(!hit.collider.isTrigger){
             Interaction interactable = hit.collider.GetComponent<Interaction>();
             if (interactable != null)
             {
@@ -39,6 +40,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 cutScene3.Interact();
             }
+            }
         }
     }
     void CheckInteract()
@@ -47,6 +49,7 @@ public class PlayerInteraction : MonoBehaviour
         // Отправляем луч из камеры игрока
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, interactRange))
         {
+            if(!hit.collider.isTrigger){
             Interaction interactable = hit.collider.GetComponent<Interaction>();
             Screamer3 cutScene3 = hit.collider.GetComponent<Screamer3>();
             if (interactable != null && interactable.IsInteract == true)
@@ -56,6 +59,7 @@ public class PlayerInteraction : MonoBehaviour
             if(cutScene3 != null && cutScene3.IsInteract == true)
             {
                cursorActive.SetActive(true);
+            }
             }
         }
         else

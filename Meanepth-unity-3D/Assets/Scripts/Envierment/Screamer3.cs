@@ -10,6 +10,19 @@ public class Screamer3 : MonoBehaviour
     public ScreenFade screenFade;
     [HideInInspector]
     public bool IsInteract = true;
+    public GameObject hintCanvas;
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player")&&IsInteract){
+            hintCanvas.SetActive(true);
+        }
+    }
+     void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player")){
+            hintCanvas.SetActive(false);
+        }
+    }
     public void Interact()
     {
         if(IsInteract){
@@ -18,6 +31,7 @@ public class Screamer3 : MonoBehaviour
         playercantMove.Rotate();
         screenFade.FadeToDark();
         StartCoroutine(ChangeSceneAfterDelay());
+        hintCanvas.SetActive(false);
         IsInteract = false;
         }
 
