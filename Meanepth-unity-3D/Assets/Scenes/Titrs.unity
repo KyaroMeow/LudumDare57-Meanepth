@@ -730,8 +730,8 @@ MonoBehaviour:
     (kyaromeow)\n\r\nTEXTURE ARTISTS\r\nSophia Miglan (sophiamiln)\r\nDorogova Maria
     (rensun)\r\nKulakova Sofia (senkoso) \r\n\r\r\nThanks for playing!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: da08b77ebce2f9c4b9645e5e05f630ae, type: 2}
-  m_sharedMaterial: {fileID: -620742872471332908, guid: da08b77ebce2f9c4b9645e5e05f630ae, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a247876a84adafe4da57277ffbfd0f8e, type: 2}
+  m_sharedMaterial: {fileID: 2945931601376260631, guid: a247876a84adafe4da57277ffbfd0f8e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

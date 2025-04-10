@@ -5,6 +5,7 @@ using UnityEngine;
 public class Screamer2 : MonoBehaviour
 {
    public Animator RibaAnimator;
+   public AudioSource RibaSong;
    private bool IsntPlayed = true;
    void OnTriggerEnter(Collider other)
    {
@@ -12,6 +13,7 @@ public class Screamer2 : MonoBehaviour
     if(IsntPlayed){
     SFXManager.instance.PlayScream();
     RibaAnimator.SetTrigger("Screamer");
+    RibaSong.Play();
     IsntPlayed = false;
     }
     }
